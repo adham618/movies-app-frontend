@@ -23,8 +23,6 @@ Movies App Using Next JS && TypeScript && Tailwind-CSS && Strapi-CMS.
 
 - **Strapi-CMS**: Headless CMS
 
-- **Stripe-Payments**: Online Payment Processing
-
 - **Prettier**: Code Formatter
 
 - **Eslint**: Linter
