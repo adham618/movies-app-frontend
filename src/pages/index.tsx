@@ -1,18 +1,50 @@
 import * as React from 'react';
 
+import Card from '@/components/Card';
 import Seo from '@/components/Seo';
 
-export default function HomePage() {
+import { Movie } from '@/types/home';
+
+interface HomePageProps {
+  movies: Movie[],
+  error: {
+    message: string
+  }
+}
+
+export default function HomePage({ movies, error }: HomePageProps) {
+  if (error) {
+    return <div>An error occured: {error.message}</div>;
+  }
   return (
     <>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
-
-      <main>
-        <section className='bg-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'></div>
+      <div className='layout flex min-h-screen flex-col items-center justify-center'>
+        <div className="mt-5 font-bold">
+          <h2>Lastest Movies</h2>
+        </div>
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {movies.map(movie => (
+            <Card key={movie.id} movie={movie} />
+          ))}
         </section>
-      </main>
+      </div>
     </>
   );
+}
+
+
+export const getServerSideProps = async () => {
+  const API_URL = process.env.API_URL
+  const res = await fetch(`${API_URL}/api/movies?populate=*`)
+  const data = await res.json()
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return {
+    props: { movies: data.data }
+  }
 }
