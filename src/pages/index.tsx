@@ -20,7 +20,7 @@ export default function HomePage({ movies, error }: HomePageProps) {
     <>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
-      <div className='layout flex min-h-screen flex-col items-center justify-center'>
+      <div className='layout flex min-h-screen flex-col items-center'>
         <div className="mt-5 font-bold">
           <h2>Lastest Movies</h2>
         </div>
