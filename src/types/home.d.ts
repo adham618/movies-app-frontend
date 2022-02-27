@@ -7,6 +7,7 @@ export interface Movie {
     updatedAt: string;
     publishedAt: string;
     description: string;
+    uid: string;
     poster: {
       data: {
         id: number;
