@@ -24,7 +24,7 @@ export default function HomePage({ movies, error }: HomePageProps) {
         <div className='mt-5 font-bold'>
           <h2>Lastest Movies</h2>
         </div>
-        <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+        <section className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
           {movies.map((movie) => (
             <Card key={movie.id} movie={movie} />
           ))}
