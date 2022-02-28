@@ -8,13 +8,10 @@ export default function Blog() {
       <Seo templateTitle='Blog' />
 
       <main>
-
         <section className=''>
-          <div className='layout py-20 min-h-screen'>
-            I am a Blog
-          </div>
+          <div className='layout py-20 min-h-screen'>I am a Blog</div>
         </section>
       </main>
     </>
-  )
+  );
 }

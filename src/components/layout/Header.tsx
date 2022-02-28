@@ -14,14 +14,20 @@ const links = [
 ];
 
 export default function Header() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <header className='sticky top-0 z-50 bg-gray-200 overflow-hidden shadow-slate-100'>
       <div className='layout flex h-14 items-center justify-between'>
-        <Link href="/" passHref>
-          <div className="flex cursor-pointer">
-            <NextImage src="/svg/logo.svg" width={25} height={25} alt="site-logo" draggable="false" />
-            <span className="font-bold">Movies</span>
+        <Link href='/' passHref>
+          <div className='flex cursor-pointer'>
+            <NextImage
+              src='/svg/logo.svg'
+              width={25}
+              height={25}
+              alt='site-logo'
+              draggable='false'
+            />
+            <span className='font-bold'>Movies</span>
           </div>
         </Link>
         <nav>
@@ -29,7 +35,12 @@ export default function Header() {
             {links.map(({ href, label }) => (
               <li key={`${href}${label}`}>
                 <UnstyledLink href={href} className='hover:text-gray-600'>
-                  <p className={router.pathname === href ? 'text-blue-500' : ''}> {label}</p>
+                  <p
+                    className={router.pathname === href ? 'text-blue-500' : ''}
+                  >
+                    {' '}
+                    {label}
+                  </p>
                 </UnstyledLink>
               </li>
             ))}

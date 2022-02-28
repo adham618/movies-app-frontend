@@ -8,13 +8,10 @@ export default function ContactPage() {
       <Seo templateTitle='Contact' />
 
       <main>
-
         <section className=''>
-          <div className='layout py-20 min-h-screen'>
-            I am contact page
-          </div>
+          <div className='layout py-20 min-h-screen'>I am contact page</div>
         </section>
       </main>
     </>
-  )
+  );
 }

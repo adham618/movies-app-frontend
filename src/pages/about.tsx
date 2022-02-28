@@ -8,13 +8,10 @@ export default function AboutPage() {
       <Seo templateTitle='About' />
 
       <main>
-
         <section className=''>
-          <div className='layout py-20 min-h-screen'>
-            I am about page
-          </div>
+          <div className='layout py-20 min-h-screen'>I am about page</div>
         </section>
       </main>
     </>
-  )
+  );
 }
