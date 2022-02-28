@@ -36,8 +36,8 @@ export default function HomePage({ movies, error }: HomePageProps) {
 
 
 export const getServerSideProps = async () => {
-  const API_URL = process.env.API_URL
-  const res = await fetch(`${API_URL}/api/movies?populate=*`)
+  const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL
+  const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/movies?populate=*`)
   const data = await res.json()
   if (!data) {
     return {

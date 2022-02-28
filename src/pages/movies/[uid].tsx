@@ -30,8 +30,8 @@ export default function MoviePage({ movie }: MoviePageProps) {
 }
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { uid } = context.query
-  const API_URL = process.env.API_URL
-  const res = await fetch(`${API_URL}/api/movies?filters[uid][$eq]=${uid}`)
+  const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL
+  const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/movies?filters[uid][$eq]=${uid}`)
   const data = await res.json()
   if (!data) {
     return {
