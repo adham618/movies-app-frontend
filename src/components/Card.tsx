@@ -2,8 +2,6 @@
 import Link from 'next/link';
 import * as React from 'react';
 
-
-
 type CardProps = {
   movie: {
     id: number;
@@ -26,17 +24,24 @@ export default function Card({ movie }: CardProps) {
   const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
   return (
     <div className='max-w-md border rounded-2xl mt-5 shadow-xl mb-5 relative h-auto'>
-      <Link href='/movies/[uid]' as={`/movies/${movie.attributes.uid}`} passHref>
-        <div className='cursor-pointer'>
-          <img
-            className='rounded-t-2xl w-full h-64'
-            loading='lazy'
-            src={
-              NEXT_PUBLIC_API_URL + movie.attributes.poster.data.attributes.url
-            }
-            alt='card-img'
-          />
-        </div>
+      <Link
+        href='/movies/[uid]'
+        as={`/movies/${movie.attributes.uid}`}
+        passHref
+      >
+        {movie.attributes.poster.data.attributes.url && (
+          <div className='cursor-pointer'>
+            <img
+              className='rounded-t-2xl w-full h-64'
+              loading='lazy'
+              src={
+                NEXT_PUBLIC_API_URL +
+                movie.attributes.poster.data.attributes.url
+              }
+              alt='card-img'
+            />
+          </div>
+        )}
       </Link>
       <div className='p-3'>
         <h3 className='mb-2'>{movie.attributes.title}</h3>
