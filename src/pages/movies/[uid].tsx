@@ -18,7 +18,7 @@ export default function MoviePage({ movie }: MoviePageProps) {
     <>
       <Seo
         templateTitle={movie.attributes.title}
-        description={movie.attributes.description.substring(0, 80)}
+        description={`${movie.attributes.description.substring(0, 80)}...`}
       />
 
       <main className='layout py-20 min-h-screen'>
