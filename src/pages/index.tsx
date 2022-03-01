@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as React from 'react';
 
 import Card from '@/components/Card';
@@ -29,6 +30,11 @@ export default function HomePage({ movies, error }: HomePageProps) {
             <Card key={movie.id} movie={movie} />
           ))}
         </section>
+        <div className='border px-5 py-2 mb-7'>
+          <Link href='/movies' passHref>
+            <button>All Movies</button>
+          </Link>
+        </div>
       </div>
     </>
   );
@@ -36,7 +42,22 @@ export default function HomePage({ movies, error }: HomePageProps) {
 
 export const getServerSideProps = async () => {
   const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/api/movies?populate=*`);
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const qs = require('qs');
+  const query = qs.stringify(
+    {
+      pagination: {
+        page: 1,
+        pageSize: 4,
+      },
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+  const res = await fetch(
+    `${NEXT_PUBLIC_API_URL}/api/movies?populate=*&${query}`
+  );
   const data = await res.json();
   if (!data) {
     return {
