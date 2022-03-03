@@ -23,7 +23,7 @@ type CardProps = {
 export default function Card({ movie }: CardProps) {
   const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
   return (
-    <div className='max-w-md border rounded-2xl mt-5 shadow-xl mb-5 relative h-auto'>
+    <div className='w-md relative mt-5 mb-5 h-auto rounded-2xl border shadow-xl'>
       <Link
         href='/movies/[uid]'
         as={`/movies/${movie.attributes.uid}`}
@@ -32,7 +32,7 @@ export default function Card({ movie }: CardProps) {
         {movie.attributes.poster.data.attributes.url && (
           <div className='cursor-pointer'>
             <img
-              className='rounded-t-2xl w-full h-64'
+              className='h-64 w-full rounded-t-2xl'
               loading='lazy'
               src={
                 NEXT_PUBLIC_API_URL +
@@ -45,7 +45,7 @@ export default function Card({ movie }: CardProps) {
       </Link>
       <div className='p-3'>
         <h3 className='mb-2'>{movie.attributes.title}</h3>
-        <p className='text-gray-700 text-xs mb-5 leading-7'>
+        <p className='mb-5 text-xs leading-7 text-gray-700'>
           {movie.attributes.description.substring(0, 70)}.....
         </p>
         <Link href='/movies/[uid]' as={`/movies/${movie.attributes.uid}`}>
