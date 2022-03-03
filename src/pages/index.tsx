@@ -25,12 +25,12 @@ export default function HomePage({ movies, error }: HomePageProps) {
         <div className='mt-5 font-bold'>
           <h2>Lastest Movies</h2>
         </div>
-        <section className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+        <section className='grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4'>
           {movies.map((movie) => (
             <Card key={movie.id} movie={movie} />
           ))}
         </section>
-        <div className='border px-5 py-2 mb-7'>
+        <div className='mb-7 border px-5 py-2'>
           <Link href='/movies' passHref>
             <button>All Movies</button>
           </Link>
