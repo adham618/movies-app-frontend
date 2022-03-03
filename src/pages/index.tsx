@@ -56,7 +56,7 @@ export const getServerSideProps = async () => {
     }
   );
   const res = await fetch(
-    `${NEXT_PUBLIC_API_URL}/api/movies?populate=*&${query}`
+    `${NEXT_PUBLIC_API_URL}/api/movies?populate=*&${query}&sort[0]=publishedAt%3Adesc`
   );
   const data = await res.json();
   if (!data) {
