@@ -23,7 +23,7 @@ type CardProps = {
 export default function Card({ movie }: CardProps) {
   const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
   return (
-    <div className='w-md relative mt-5 mb-5 h-auto rounded-2xl border shadow-xl'>
+    <div className='relative mt-5 mb-5 h-auto min-w-min max-w-md rounded-2xl border shadow-xl'>
       <Link
         href='/movies/[uid]'
         as={`/movies/${movie.attributes.uid}`}
