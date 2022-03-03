@@ -21,8 +21,8 @@ export default function MoviePage({ movie }: MoviePageProps) {
         description={`${movie.attributes.description.substring(0, 80)}...`}
       />
 
-      <main className='layout py-20 min-h-screen'>
-        <h1 className='font-bold mb-5'>{movie.attributes.title}</h1>
+      <main className='layout min-h-screen py-20'>
+        <h1 className='mb-5 font-bold'>{movie.attributes.title}</h1>
         <p className='leading-7'>{movie.attributes.description}</p>
       </main>
     </>
