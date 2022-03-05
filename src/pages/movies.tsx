@@ -47,7 +47,7 @@ export default function MoviesPage({ movies, page }: MoviesPageProps) {
             Next
           </button>
         </div>
-        <section className='grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4'>
+        <section className='grid grid-cols-1 gap-3  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {movies.map((movie) => (
             <Card key={movie.id} movie={movie} />
           ))}
