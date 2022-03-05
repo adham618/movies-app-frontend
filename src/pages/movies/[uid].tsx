@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext } from 'next';
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import Seo from '@/components/Seo';
 
@@ -23,7 +24,9 @@ export default function MoviePage({ movie }: MoviePageProps) {
 
       <main className='layout min-h-screen py-20'>
         <h1 className='mb-5 font-bold'>{movie.attributes.title}</h1>
-        <p className='leading-7'>{movie.attributes.description}</p>
+        <ReactMarkdown className='leading-7'>
+          {movie.attributes.description}
+        </ReactMarkdown>
       </main>
     </>
   );

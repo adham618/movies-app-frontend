@@ -2,6 +2,7 @@ import { GetStaticPropsContext } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import Seo from '@/components/Seo';
 interface AboutPageProps {
@@ -38,7 +39,7 @@ export default function AboutPage({ about }: AboutPageProps) {
               to /en/about With Div
             </div>
             <h1 className='mb-3 text-lg font-bold'>{about.attributes.title}</h1>
-            <p>{about.attributes.content}</p>
+            <ReactMarkdown>{about.attributes.content}</ReactMarkdown>
           </div>
         </section>
       </main>
