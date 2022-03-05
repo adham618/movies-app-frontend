@@ -32,10 +32,10 @@ export default function AboutPage({ about }: AboutPageProps) {
             <div
               className='w-28 cursor-pointer border-2 text-center'
               onClick={() => {
-                router.push('/about', '/about', { locale: 'ar' });
+                router.push('/about', '/about', { locale: 'en' });
               }}
             >
-              to /ar/about With Div
+              to /en/about With Div
             </div>
             <h1 className='mb-3 text-lg font-bold'>{about.attributes.title}</h1>
             <p>{about.attributes.content}</p>
