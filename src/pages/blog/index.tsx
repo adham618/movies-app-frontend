@@ -9,7 +9,7 @@ export default function Blog() {
 
       <main>
         <section className=''>
-          <div className='layout py-20 min-h-screen'>I am a Blog</div>
+          <div className='layout min-h-screen py-20'>I am a Blog</div>
         </section>
       </main>
     </>

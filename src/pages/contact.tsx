@@ -9,7 +9,7 @@ export default function ContactPage() {
 
       <main>
         <section className=''>
-          <div className='layout py-20 min-h-screen'>I am contact page</div>
+          <div className='layout min-h-screen py-20'>I am contact page</div>
         </section>
       </main>
     </>
