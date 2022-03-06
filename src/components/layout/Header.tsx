@@ -11,12 +11,13 @@ const links = [
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
+  { href: '/paid-articles', label: 'Paid Articles' },
 ];
 
 export default function Header() {
   const router = useRouter();
   return (
-    <header className='sticky top-0 z-50 bg-gray-200 overflow-hidden shadow-slate-100'>
+    <header className='sticky top-0 z-50 overflow-hidden bg-gray-200 shadow-slate-100'>
       <div className='layout flex h-14 items-center justify-between'>
         <Link href='/' passHref>
           <div className='flex cursor-pointer'>

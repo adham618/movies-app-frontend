@@ -23,7 +23,7 @@ export default function HomePage({ movies, error }: HomePageProps) {
       <Seo />
       <div className='layout flex min-h-screen flex-col items-center'>
         <div className='mt-5 font-bold'>
-          <h2>Lastest Movies</h2>
+          <h1>Lastest Movies</h1>
         </div>
         <section className='grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {movies.map((movie) => (
